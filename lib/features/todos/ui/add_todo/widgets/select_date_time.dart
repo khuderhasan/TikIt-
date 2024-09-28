@@ -15,10 +15,16 @@ class SelectDateTime extends StatefulWidget {
 class _SelectDateTimeState extends State<SelectDateTime> {
   final initalTime = TimeDateHelpers.timeToString(TimeOfDay.now());
   final intialDate = TimeDateHelpers.dateFormatter(DateTime.now());
+
   @override
-  Widget build(BuildContext context) {
+  void initState() {
     context.read<TodoCubit>().time = initalTime;
     context.read<TodoCubit>().date = intialDate;
+    super.initState();
+  }
+
+  @override
+  Widget build(BuildContext context) {
     return Row(
       children: [
         Expanded(

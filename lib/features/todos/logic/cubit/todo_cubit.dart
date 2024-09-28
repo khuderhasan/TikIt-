@@ -69,7 +69,5 @@ class TodoCubit extends Cubit<TodoState> {
   void dispose() {
     titleController.clear();
     notesController.clear();
-    time = TimeDateHelpers.timeToString(TimeOfDay.now());
-    date = TimeDateHelpers.dateFormatter(DateTime.now());
   }
 }
